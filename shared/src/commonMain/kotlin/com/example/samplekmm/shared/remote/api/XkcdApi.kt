@@ -5,6 +5,7 @@ import io.ktor.client.*
 import io.ktor.client.features.json.*
 import io.ktor.client.features.json.serializer.*
 import io.ktor.client.request.*
+import kotlin.random.Random
 
 class XkcdApi {
     private val baseUrl = "https://xkcd.com"
@@ -19,7 +20,8 @@ class XkcdApi {
         }
     }
 
-    suspend fun fetchLatestComic() =
-        httpClient.get<XkcdResponse>("$baseUrl/info.0.json")
-
+    suspend fun fetchLatestComic() : XkcdResponse{
+        val random = Random.nextInt(2478)
+        return httpClient.get("$baseUrl/$random/info.0.json")
+    }
 }
