@@ -1,4 +1,4 @@
-package com.example.samplekmm.androidApp
+package com.example.samplekmm.androidApp.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
